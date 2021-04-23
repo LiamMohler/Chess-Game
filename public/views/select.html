@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>JavaScript Canvas</title>
+<script src="https://code.jquery.com/jquery-2.1.3.min.js"></script>
+</head>
+
+
+<body>
+  <h1>Two Player Chess Game</h1>
+  <div id="choices">
+    <form onsubmit="return Print();">
+      <label for="text" style="font-weight: bold;">Enter your Desired Username</label>
+      <input type="text" id="name" name="name" value="">
+      <input type="submit" value="Submit Username"formmethod="post" formaction="/setUserName">
+    </form>
+  </div>
+  <br>
+  <div>The first player to join submit their username will be given white, and the second person to submit their username will be given black.</div>
+  <div>When you click on your piece during your turn green spaces will show up and click the green space to move there.</div>
+  <div>The first person to capture the opponents king wins.</div>
+  <p><a href="https://en.wikipedia.org/wiki/Rules_of_chess">Chess Rules</a></p>
+
+  <script type="text/javascript">
+  function Print(){
+    if($("#name").val()==""){
+      alert("Please enter a name");
+      return false;
+    }
+    else{
+      return true;
+    }
+
+
+//    $.post('/selections',{name:$("#name").val(),color:$("#color").val()},function Success(data){console.log(data);});
+//    return false;
+  }
+  </script>
+</body>
+</html>
